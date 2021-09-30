@@ -1,21 +1,17 @@
-Class Contact 
+Class Contact
     Property Name As string
     Property PhoneNumber As integer
-    'also define getters and setters with properties
-    'properties is equivalent to getter and setters
-    Public Sub New(ByVal name as String, ByVal number as integer)
+    Public Sub New(ByVal name as string, ByVal number as integer)
         Me.Name = name
         Me.PhoneNumber = number
     End Sub
-    
     Public Sub New()
-        'parameterless constructor
+        ' parameterless constructor
     End Sub
+    
 
-    Overrides Function ToString()  As String
-        return $"Name: {Me.Name} Number: {Me.PhoneNumber}"
-
+    Overrides Function ToString()  As string
+        return $"Name: {Me.Name} Number: {Me.PhoneNumber}"        
     End Function
-      
-
+    
 End Class
