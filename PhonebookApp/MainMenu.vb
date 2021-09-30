@@ -1,0 +1,32 @@
+Class MainMenu
+    Implements  IMenu
+    Sub Start() Implements IMenu.Start
+        Console.WriteLine("Hello World!")
+        'create a menu
+        dim repeat as Boolean = true
+        Do While repeat
+            Console.WriteLine("What would you like to do?")
+            Console.WriteLine("[0] Add a friend")
+            Console.WriteLine("[x] Exit")
+            Dim input as string = Console.ReadLine()
+            Select Case input
+                Case "0"
+                    Console.WriteLine("Hello")
+                    AddFriend()
+                Case "x"
+                    Console.WriteLine("Goodbye")
+                    repeat = false
+            End Select
+        Loop
+    End Sub
+    Sub AddFriend()
+        Console.WriteLine("Name: ")
+        dim name as string = console.ReadLine()
+        Console.WriteLine("Number: ")
+        dim number as string = console.ReadLine()  
+        dim newFriend as Contact = new Contact(name, Int32.Parse(number))     
+        Console.WriteLine("New Friend Created  "+ newFriend.ToString())
+    End Sub
+    
+
+End Class
