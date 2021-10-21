@@ -7,7 +7,7 @@ Class MainMenu
     dim filename as string = "friends.json"
     dim jsonstring as string = ""
     Sub Start() Implements IMenu.Start
-        Console.WriteLine("Hello World!")
+        'Console.WriteLine("Hello World!")
         'create a menu
         dim repeat as Boolean = true
         Do While repeat
@@ -52,6 +52,32 @@ Class MainMenu
         File.WriteAllText(filename, jsonstring)
     End Sub
 
+
+
+
+    Function Z(ByVal pstring as string) as Boolean
+        dim i,j as Integer 
+        dim response as Boolean
+        i=0
+        j = pstring.Length - 1
+        response = true
+        Do while (i<j)
+            if(pstring.chars(i)<>pstring.chars(j)) Then 
+                response = false
+            End if
+            i = i+1
+            j = j-1
+        Loop
+        Return response
+    End Function
+
+    dim stop2, post as Boolean
+    stop2 = Z("stop")
+    post = Z("post")
+
+    Console.WriteLine(stop2)
+    Console.WriteLine(post)
+
     Function GetContactsFromFile() As List(of Contact)
         Try
             jsonString = FIle.ReadAllText(filename)
@@ -59,7 +85,7 @@ Class MainMenu
         Catch ex As Exception
             return new List(of Contact)
         End Try
-        
+
     End Function    
 
 

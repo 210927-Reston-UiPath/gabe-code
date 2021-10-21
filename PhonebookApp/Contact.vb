@@ -7,6 +7,7 @@ Class Contact
     End Sub
     Public Sub New()
         ' parameterless constructor
+        'define for when constructor doesnt have parameters
     End Sub
     
 
